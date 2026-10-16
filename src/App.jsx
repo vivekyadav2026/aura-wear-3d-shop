@@ -1508,64 +1508,69 @@ Product: ${product.name}. Recommend exact size [S, M, L, XL], 3D drape feedback,
       </header>
 
       {/* =====================================================================
-          HERO SECTION: 3D MANNEQUIN SHOWCASE
+          HERO SECTION: 3D MANNEQUIN SHOWCASE (MOBILE OPTIMIZED)
       ===================================================================== */}
-      <section id="top" className="relative overflow-hidden pt-4 pb-12 lg:py-16 border-b border-neutral-200/80">
+      <section id="top" className="relative overflow-hidden pt-2 pb-8 sm:pt-4 sm:pb-12 lg:py-16 border-b border-neutral-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
-            {/* Left Copy */}
-            <div className="lg:col-span-6 space-y-4 sm:space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-neutral-200 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-center">
+            {/* Left Copy Column */}
+            <div className="lg:col-span-6 space-y-3 sm:space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-neutral-200/90 shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-700">
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-700">
                   REAL-TIME 3D ATELIER • EDITION 04
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight leading-[0.96] text-neutral-950">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[0.98] text-neutral-950">
                 WEAR THE <br />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-950 via-neutral-600 to-neutral-400">
                   FUTURE.
                 </span>
               </h1>
 
-              <p className="text-sm sm:text-base lg:text-lg text-neutral-600 max-w-xl leading-relaxed font-normal">
-                Architectural streetwear crafted from 520GSM organic textiles and bio-nappa leather. Inspect every fold, seam, and fabric shader in live 360° 3D before it arrives.
+              <p className="text-xs sm:text-sm lg:text-base text-neutral-600 max-w-xl leading-relaxed font-normal">
+                Architectural streetwear crafted from 520GSM organic textiles. Inspect real-time 360° cloth simulation and material shaders below.
               </p>
 
-              {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-3 pt-1">
-                <button
-                  onClick={() => scrollToSection('catalog-section')}
-                  className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-neutral-950 text-white text-xs font-bold uppercase tracking-[0.18em] hover:bg-neutral-800 transition-all shadow-md flex items-center gap-2.5 group"
-                >
-                  <span>Shop Collection</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </button>
+              {/* Streamlined Action Buttons (Side-by-Side on Mobile, No Heavy Vertical Stacking) */}
+              <div className="space-y-2 pt-0.5">
+                <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2">
+                  <button
+                    onClick={() => scrollToSection('catalog-section')}
+                    className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-neutral-950 text-white text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] hover:bg-neutral-800 transition-all shadow-sm flex items-center justify-center gap-1.5 group active:scale-[0.98]"
+                  >
+                    <span>Shop Now</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </button>
 
-                <button
-                  onClick={() => openQuickView(currentHeroProduct, heroColorIdx, 'L')}
-                  className="px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-white border border-neutral-300 text-neutral-900 text-xs font-bold uppercase tracking-[0.18em] hover:border-neutral-900 transition-all flex items-center gap-2"
-                >
-                  <Box className="w-4 h-4" />
-                  <span>Inspect in 3D</span>
-                </button>
+                  <button
+                    onClick={() => openQuickView(currentHeroProduct, heroColorIdx, 'L')}
+                    className="w-full sm:w-auto px-4 sm:px-5 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white border border-neutral-300 text-neutral-900 text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] hover:border-neutral-900 transition-all flex items-center justify-center gap-1.5 active:scale-[0.98]"
+                  >
+                    <Box className="w-3.5 h-3.5 text-neutral-900" />
+                    <span>Inspect 3D</span>
+                  </button>
+                </div>
 
                 <button
                   onClick={() => setAiDrawerOpen(true)}
-                  className="px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 text-white text-xs font-bold uppercase tracking-[0.18em] hover:opacity-95 transition-all flex items-center gap-2 shadow-sm"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.16em] hover:opacity-95 transition-all shadow-xs border border-neutral-700/80 active:scale-[0.98]"
                 >
-                  <Wand2 className="w-3.5 h-3.5 text-amber-300" />
-                  <span>AI Look Architect</span>
+                  <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                  <span>Launch AI Bespoke Look Architect</span>
                 </button>
               </div>
 
-              {/* Garment Switcher */}
-              <div className="pt-4 sm:pt-6 border-t border-neutral-200/80">
-                <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-400 mb-2.5">
-                  LIVE 3D OUTFIT SELECTOR:
+              {/* Garment Switcher Chips */}
+              <div className="pt-2 sm:pt-4 border-t border-neutral-200/80">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+                    LIVE 3D OUTFIT SELECTOR:
+                  </span>
+                  <span className="text-[9px] text-neutral-400 hidden sm:inline">Tap to swap mesh</span>
                 </div>
-                <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+                <div className="flex gap-1.5 overflow-x-auto pb-1 no-scrollbar">
                   {PRODUCTS.slice(0, 5).map((prod, idx) => (
                     <button
                       key={prod.id}
@@ -1573,47 +1578,48 @@ Product: ${product.name}. Recommend exact size [S, M, L, XL], 3D drape feedback,
                         setHeroGarmentIdx(idx);
                         setHeroColorIdx(0);
                       }}
-                      className={`px-3 py-1.5 sm:py-2 rounded-xl text-xs font-medium whitespace-nowrap transition-all ${
+                      className={`px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
                         heroGarmentIdx === idx
-                          ? 'bg-neutral-900 text-white shadow-sm'
-                          : 'bg-white/90 text-neutral-700 border border-neutral-200 hover:bg-white'
+                          ? 'bg-neutral-900 text-white shadow-sm ring-2 ring-neutral-900 ring-offset-1'
+                          : 'bg-white text-neutral-700 border border-neutral-200 hover:bg-neutral-50'
                       }`}
                     >
-                      {prod.name.split(' ').slice(-2).join(' ')}
+                      <span className="w-2 h-2 rounded-full" style={{ backgroundColor: prod.colors[0].hex }} />
+                      <span>{prod.name.split(' ').slice(-2).join(' ')}</span>
                     </button>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* Right 3D Stage */}
+            {/* Right 3D Stage (Optimized for Mobile Height & Touch Controls) */}
             <div className="lg:col-span-6 relative">
-              <div className="relative h-[380px] sm:h-[480px] lg:h-[520px] w-full rounded-[2rem] bg-gradient-to-b from-[#EFECE6] via-[#E6E3DD] to-[#F7F6F2] border border-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden">
-                {/* Floating Top Controls */}
-                <div className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
-                  <div className="px-3 py-1.5 rounded-xl bg-white/85 backdrop-blur-md border border-white/60 shadow-xs pointer-events-auto">
-                    <div className="text-[9px] uppercase tracking-[0.2em] text-neutral-400">Selected Sculpture</div>
-                    <div className="text-xs font-bold text-neutral-900">
+              <div className="relative h-[330px] sm:h-[450px] lg:h-[510px] w-full rounded-2xl sm:rounded-[2rem] bg-gradient-to-b from-[#EFECE6] via-[#E6E3DD] to-[#F7F6F2] border border-white shadow-[0_15px_45px_-12px_rgba(0,0,0,0.08)] overflow-hidden">
+                {/* Floating Top Controls (Responsive & Mobile-safe) */}
+                <div className="absolute top-2.5 left-2.5 right-2.5 z-20 flex items-center justify-between pointer-events-none gap-1.5">
+                  <div className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-white/90 backdrop-blur-md border border-white/70 shadow-xs pointer-events-auto max-w-[60%] sm:max-w-none truncate">
+                    <div className="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-neutral-400 truncate">3D Sculpture</div>
+                    <div className="text-[11px] sm:text-xs font-bold text-neutral-900 truncate">
                       {currentHeroProduct.name}
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 pointer-events-auto">
+                  <div className="flex items-center gap-1 pointer-events-auto">
                     <button
                       onClick={() => setHeroWireframe(!heroWireframe)}
-                      className={`px-2.5 py-1.5 rounded-lg text-[9px] font-bold uppercase tracking-wider backdrop-blur-md border transition-all ${
+                      className={`px-2 py-1 rounded-lg text-[9px] font-bold uppercase tracking-wider backdrop-blur-md border transition-all ${
                         heroWireframe ? 'bg-neutral-900 text-white border-neutral-900' : 'bg-white/85 text-neutral-800 border-white'
                       }`}
                     >
-                      {heroWireframe ? 'Wireframe' : 'PBR Solid'}
+                      {heroWireframe ? 'Wire' : 'Solid'}
                     </button>
                     <button
                       onClick={() =>
                         setHeroLighting((prev) => (prev === 'studio' ? 'dramatic' : prev === 'dramatic' ? 'cyber' : 'studio'))
                       }
-                      className="px-2.5 py-1.5 rounded-lg bg-white/85 backdrop-blur-md border border-white text-[9px] font-bold uppercase tracking-wider text-neutral-800 hover:bg-white"
+                      className="px-2 py-1 rounded-lg bg-white/85 backdrop-blur-md border border-white text-[9px] font-bold uppercase tracking-wider text-neutral-800 hover:bg-white"
                     >
-                      {heroLighting} Light
+                      {heroLighting}
                     </button>
                   </div>
                 </div>
@@ -1632,21 +1638,26 @@ Product: ${product.name}. Recommend exact size [S, M, L, XL], 3D drape feedback,
                   onResetTrigger={heroResetKey}
                 />
 
+                {/* Mobile Rotation Hint */}
+                <div className="absolute top-12 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-black/40 text-white/90 text-[9px] font-medium tracking-wider uppercase backdrop-blur-xs pointer-events-none flex items-center gap-1 sm:hidden">
+                  <RotateCcw className="w-2.5 h-2.5" /> Drag 360°
+                </div>
+
                 {/* Bottom Controls Bar */}
-                <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between gap-2 px-3 py-2 rounded-2xl bg-white/90 backdrop-blur-md border border-white/70 shadow-xs">
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 z-20 flex items-center justify-between gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-white/70 shadow-xs">
                   <div className="flex items-center gap-1.5">
                     {currentHeroProduct.colors.map((c, idx) => (
                       <button
                         key={c.name}
                         onClick={() => setHeroColorIdx(idx)}
-                        className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full border transition-transform ${
+                        className={`w-5 h-5 rounded-full border transition-transform ${
                           heroColorIdx === idx ? 'ring-2 ring-offset-1 ring-neutral-900 scale-110' : 'border-neutral-300'
                         }`}
                         style={{ backgroundColor: c.hex }}
                         title={c.name}
                       />
                     ))}
-                    <span className="text-[11px] font-semibold text-neutral-700 ml-1 hidden sm:inline">
+                    <span className="text-[10px] font-semibold text-neutral-700 ml-1 hidden sm:inline">
                       {currentHeroColor.name}
                     </span>
                   </div>
@@ -1654,23 +1665,23 @@ Product: ${product.name}. Recommend exact size [S, M, L, XL], 3D drape feedback,
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => setHeroZoom((z) => (z >= 1.3 ? 0.9 : z + 0.15))}
-                      className="p-1.5 rounded-lg hover:bg-neutral-100 text-neutral-700"
+                      className="p-1 rounded-lg hover:bg-neutral-100 text-neutral-700"
                       title="Zoom"
                     >
-                      <ZoomIn className="w-3.5 h-3.5" />
+                      <ZoomIn className="w-3 h-3" />
                     </button>
                     <button
                       onClick={() => setHeroResetKey((k) => k + 1)}
-                      className="p-1.5 rounded-lg hover:bg-neutral-100 text-neutral-700"
+                      className="p-1 rounded-lg hover:bg-neutral-100 text-neutral-700"
                       title="Reset View"
                     >
-                      <RotateCcw className="w-3.5 h-3.5" />
+                      <RotateCcw className="w-3 h-3" />
                     </button>
                     <button
                       onClick={() => setHeroAutoRotate(!heroAutoRotate)}
-                      className="px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-neutral-700 hover:bg-neutral-100"
+                      className="px-2 py-0.5 rounded-md text-[9px] font-bold uppercase tracking-wider text-neutral-700 hover:bg-neutral-100"
                     >
-                      {heroAutoRotate ? 'Auto 360' : 'Paused'}
+                      {heroAutoRotate ? 'Auto 360' : 'Hold'}
                     </button>
                   </div>
                 </div>
@@ -2112,7 +2123,7 @@ Product: ${product.name}. Recommend exact size [S, M, L, XL], 3D drape feedback,
       {/* =====================================================================
           FOOTER
       ===================================================================== */}
-      <footer className="bg-white border-t border-neutral-200 pt-10 pb-8 text-xs text-neutral-500">
+      <footer className="bg-white border-t border-neutral-200 pt-10 pb-24 sm:pb-8 text-xs text-neutral-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-8 border-b border-neutral-100">
           <div className="space-y-2">
             <div className="text-base font-black tracking-[0.22em] text-neutral-900">AURA WEAR</div>
@@ -2806,6 +2817,63 @@ Product: ${product.name}. Recommend exact size [S, M, L, XL], 3D drape feedback,
           </div>
         </div>
       )}
+      {/* =====================================================================
+          MOBILE FLOATING LUXURY ACTION DOCK (APP-LIKE EXPERIENCE)
+      ===================================================================== */}
+      <div className="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-white/92 backdrop-blur-xl border-t border-neutral-200/80 px-4 py-2 flex items-center justify-around shadow-[0_-8px_30px_rgba(0,0,0,0.08)] pb-safe">
+        <button
+          onClick={() => scrollToSection('top')}
+          className="flex flex-col items-center gap-0.5 text-neutral-600 hover:text-neutral-950 transition-colors"
+        >
+          <Compass className="w-4 h-4" />
+          <span className="text-[9px] font-bold uppercase tracking-wider">3D Studio</span>
+        </button>
+
+        <button
+          onClick={() => {
+            setActiveCategory('All');
+            scrollToSection('catalog-section');
+          }}
+          className="flex flex-col items-center gap-0.5 text-neutral-600 hover:text-neutral-950 transition-colors"
+        >
+          <Grid className="w-4 h-4" />
+          <span className="text-[9px] font-bold uppercase tracking-wider">Catalog</span>
+        </button>
+
+        <button
+          onClick={() => setAiDrawerOpen(true)}
+          className="flex flex-col items-center gap-0.5 -mt-4 bg-neutral-900 text-white p-2.5 rounded-full shadow-lg border border-neutral-800 active:scale-95 transition-transform"
+          aria-label="Launch AI Stylist"
+        >
+          <Sparkles className="w-4 h-4 text-amber-300" />
+        </button>
+
+        <button
+          onClick={() => setWishlistOpen(true)}
+          className="relative flex flex-col items-center gap-0.5 text-neutral-600 hover:text-neutral-950 transition-colors"
+        >
+          <Heart className="w-4 h-4" />
+          {wishlist.length > 0 && (
+            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-neutral-900 text-white text-[8px] font-bold flex items-center justify-center">
+              {wishlist.length}
+            </span>
+          )}
+          <span className="text-[9px] font-bold uppercase tracking-wider">Saved</span>
+        </button>
+
+        <button
+          onClick={() => setCartOpen(true)}
+          className="relative flex flex-col items-center gap-0.5 text-neutral-600 hover:text-neutral-950 transition-colors"
+        >
+          <ShoppingBag className="w-4 h-4" />
+          {cartCount > 0 && (
+            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-neutral-900 text-white text-[8px] font-bold flex items-center justify-center">
+              {cartCount}
+            </span>
+          )}
+          <span className="text-[9px] font-bold uppercase tracking-wider">Bag</span>
+        </button>
+      </div>
     </div>
   );
 }
